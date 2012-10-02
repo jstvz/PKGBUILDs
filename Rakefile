@@ -1,7 +1,7 @@
 require 'rake'
 require 'rake/clean'
 
-CLEAN.include '*/*.tar.*', '*/src', '*/pkg'
+CLEAN.include '*/*.tar.*', '*/src', '*/pkg', '*.zip', '*.deb'
 
 desc 'Run namcap on all PKGBUILDs.'
 task :namcap do
