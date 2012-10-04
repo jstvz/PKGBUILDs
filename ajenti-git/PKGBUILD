@@ -38,7 +38,11 @@ build() {
     git pull
   fi
 
-  find . -name '*.py' -exec sed -i 's|#!/usr/bin/env python|#!/usr/bin/env python2|' "{}" \;
+  msg2 'Replacing python shebang by python2 shebang...'
+  find . -type f -exec sed -i \
+    -e'1s|^#!/usr/bin/env python$|#!/usr/bin/env python2|' \
+    -e '1s|^#!/usr/bin/python$|#!/usr/bin/env python2|' \
+    "{}" \;
 }
 
 package() {
@@ -46,5 +50,6 @@ package() {
   python2 setup.py install --root "$pkgdir"
   rm -r "$pkgdir/etc/init.d"
   install -D "packaging/files/ajenti.arch" "$pkgdir/etc/rc.d/ajenti"
+  msg2 'Fixing config file permissions...'
   chmod o-rwx "$pkgdir/etc/ajenti/ajenti.conf"
 }
