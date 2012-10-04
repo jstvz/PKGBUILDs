@@ -18,6 +18,6 @@ source=(https://github.com/downloads/palfrey/rhythmbox-tray-icon/rhythmbox-tray-
 md5sums=('2291a0bd18efdb3929b887f690752782')
 
 package() {
-    tar xfC $srcdir/data.tar.gz $pkgdir
+  tar xfC "$srcdir/data.tar.gz" "$pkgdir"
 }
 
