@@ -5,7 +5,7 @@
 # Submitter: vbPadre <vbpadre [at] gmail.com>
 
 pkgname=ajenti-git
-pkgver=20121004
+pkgver=20121007
 pkgrel=1
 pkgdesc="An easy server administration frontend like webmin. Please report \
 bugs regarding the PKGBUILD at https://github.com/ystein/archlinux-aur."
@@ -19,6 +19,7 @@ makedepends=('git' 'python2' 'python2-distribute')
 optdepends=('python2-psutil: Task Manager plugin'
             'python2-beautifulsoup3: Munin plugin')
 provides=('ajenti')
+conflicts=('ajenti')
 install='ajenti.install'
 
 _gitroot=git://github.com/Eugeny/ajenti.git
