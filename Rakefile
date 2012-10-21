@@ -50,8 +50,8 @@ def commits_since? date, repo
 end
 
 def publish_package
-    %x(makepkg --source)
-    %x(aurploader *.src.tar.gz)
+  puts %x(makepkg --source)
+  puts %x(aurploader *.src.tar.gz)
 end
 
 desc 'Check git packages for updates and publish them.'
@@ -69,9 +69,9 @@ task :git do
         # update PKGBUILD and publish the new package
         today = Date.today.to_s.gsub %r/-/, ''
         puts "Setting pkgver to #{today}..."
-        newpkgbuild = File.read "#{pkg}/PKGBUILD"
+        newpkgbuild = File.read 'PKGBUILD'
         newpkgbuild.sub! %r/^pkgver=.*$/, "pkgver=#{today}"
-        File.open(pkgbuild, 'w') { |file| file.puts newpkgbuild }
+        File.open('PKGBUILD', 'w') { |file| file.puts newpkgbuild }
 
         puts 'Publishing package...'
         publish_package
