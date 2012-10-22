@@ -29,15 +29,11 @@ build() {
   if [[ ! -d "$pkgname" ]] ; then
     msg2 'Cloning GIT repository...'
     git clone "$_gitroot" "$pkgname"
-    freshclone=true
   fi
   cd "$pkgname"
-  if [[ -z $freshclone ]]; then
-    msg2 'Updating local GIT repository...'
-    git reset --hard
-    git checkout "$_gitname"
-    git pull
-  fi
+  git reset --hard
+  git checkout "$_gitname"
+  git pull
 
   msg2 'Replacing python shebang by python2 shebang...'
   find . -type f -exec sed -i \
