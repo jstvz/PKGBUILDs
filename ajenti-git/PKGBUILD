@@ -5,7 +5,7 @@
 # Submitter: vbPadre <vbpadre [at] gmail.com>
 
 pkgname=ajenti-git
-pkgver=20121007
+pkgver=20121022
 pkgrel=1
 pkgdesc="An easy server administration frontend like webmin. Please report \
 bugs regarding the PKGBUILD at https://github.com/ystein/archlinux-aur."
@@ -50,7 +50,8 @@ package() {
   cd "$pkgname"
   python2 setup.py install --root "$pkgdir"
   rm -r "$pkgdir/etc/init.d"
-  install -D "packaging/files/ajenti.arch" "$pkgdir/etc/rc.d/ajenti"
+  install -D 'packaging/files/ajenti.arch' "$pkgdir/etc/rc.d/ajenti"
+  install -D 'packaging/files/ajenti.service' "$pkgdir/usr/lib/systemd/system/ajenti.service"
   msg2 'Fixing config file permissions...'
   chmod o-rwx "$pkgdir/etc/ajenti/ajenti.conf"
 }
