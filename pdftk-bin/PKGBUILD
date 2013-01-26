@@ -1,0 +1,37 @@
+# Please report PKGBUILD bugs at
+# https://github.com/ystein/archlinux-aur-packages
+
+# Maintainer: Yannik Stein <yannik.stein [at] gmail.com>
+# Contributor: Dan Serban
+# Submitter: Liu Chang <goduck777@gmail.com>
+
+pkgname=pdftk-bin
+pkgver=1.44_7
+pkgrel=1
+pkgdesc="Swiss army knife for PDFs. Built from binary executables available \
+in Debian repositories. Please report PKGBUILD bugs at \
+https://github.com/ystein/archlinux-aur-packages."
+url=http://www.pdfhacks.com/pdftk
+arch=(i686 x86_64)
+license=(GPL)
+depends=(libgcj12)
+provides=(pdftk)
+conflicts=(pdftk pdfchain-all-inclusive)
+
+if [ $CARCH = 'i686' ]; then
+  _DEBARCH=i386
+  md5sums=(03d410a98408d8a3b3735ecc0735ebe9)
+else
+  _DEBARCH=amd64
+  md5sums=(2e0ef5f22caa74c2113a50601db3e9c6)
+fi
+source=(http://ftp.de.debian.org/debian/pool/main/p/pdftk/pdftk_${pkgver//_/-}_${_DEBARCH}.deb)
+
+build() {
+  tar xf data.tar.gz
+}
+
+package() {
+  cp -r usr $pkgdir
+}
+
