@@ -6,7 +6,7 @@
 
 pkgname=ajenti-git
 pkgver=0.5.3.313.gff41ea6
-pkgrel=1
+pkgrel=2
 pkgdesc="An easy server administration frontend like webmin. Please report \
 PKGBUILD bugs at https://github.com/ystein/archlinux-aur-packages."
 
@@ -33,7 +33,7 @@ pkgver() {
 
 build() {
   msg2 'Replacing python shebang by python2 shebang...'
-  find "$_gitrepo" -type f -exec sed -i \
+  find "$pkgname" -type f -exec sed -i \
     -e'1s|^#!/usr/bin/env python$|#!/usr/bin/env python2|' \
     -e '1s|^#!/usr/bin/python$|#!/usr/bin/env python2|' \
     "{}" \;
