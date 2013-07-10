@@ -4,6 +4,7 @@ Arch User Repository (AUR) - Maintained Packages
 * ajenti [[aur](https://aur.archlinux.org/packages.php?ID=50172) | [website](http://ajenti.org) | [github](https://github.com/Eugeny/ajenti)]
 * ajenti-git [[aur](https://aur.archlinux.org/packages.php?ID=41177) | [website](http://ajenti.org) | [github](https://github.com/Eugeny/ajenti)]
 * jspin [[aur](https://aur.archlinux.org/packages.php?ID=53522) | [website](http://code.google.com/p/jspin/)]
+* libgcj [[aur](https://aur.archlinux.org/packages/libgcj/) | [website](http://gcc.gnu.org/java/)]
 * libgcj12 [[aur](https://aur.archlinux.org/packages/libgcj12/) | [website](http://gcc.gnu.org/java/)]
 * libgcj13 [[aur](https://aur.archlinux.org/packages/libgcj13/) | [website](http://gcc.gnu.org/java/)]
 * pdftk-bin [[aur](https://aur.archlinux.org/packages/pdftk-bin/) | [website](http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)]
