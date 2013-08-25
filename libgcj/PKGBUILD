@@ -24,7 +24,7 @@ fi
 source=(http://ftp.de.debian.org/debian/pool/main/g/gcc-4.8/$pkgname${pkgver%_*}-${pkgver##*_}_${_DEBARCH}.deb)
 
 build() {
-  tar xf data.tar.xz
+  tar xf data.tar.*
 }
 
 package() {
