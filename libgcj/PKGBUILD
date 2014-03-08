@@ -4,7 +4,7 @@
 # Maintainer: Yannik Stein <yannik.stein [at] gmail.com>
 
 pkgname='libgcj'
-pkgver=14_4.8.2_15
+pkgver=14_4.8.2_16
 pkgrel=1
 pkgdesc="Dynamically load and interpret java class files. Built from binary \
 executables available in Debian repositories. Please report PKGBUILD bugs at \
@@ -16,10 +16,10 @@ conflicts=(gcc-gcj)
 
 if [ $CARCH = 'i686' ]; then
   _DEBARCH=i386
-  md5sums=(52af0b5ff5b8c9284d8f4b5c0a825e619)
+  md5sums=(7b5f8c69e8370cdb77e0c808f7645a5d)
 else
   _DEBARCH=amd64
-  md5sums=(a5c3d242a044149b49b268692663e3a8)
+  md5sums=(f378e0371f26140efb87f016c817a04a)
 fi
 source=(http://ftp.de.debian.org/debian/pool/main/g/gcc-4.8/$pkgname${pkgver%_*}-${pkgver##*_}_${_DEBARCH}.deb)
 
@@ -31,3 +31,4 @@ package() {
   find -type f -name 'libgcj.so*' \
     -execdir install -Dm755 {} "$pkgdir/usr/lib/{}" \;
 }
+
